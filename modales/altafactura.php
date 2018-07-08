@@ -1,55 +1,58 @@
-
 <!--
-  Autor: MAAA
-  Dexripción: CRUD Cuentas por cobrar
+    Autor:MAAA
+    Descripción: Modal para alta de facturas
 -->
-<html>
-  <head>
-    <meta charset="utf-8">
-      <?php require_once "scripts.php";  ?>
-    <title></title>
-  </head>
-  <body>
- <!-- Require para MENU--> 
- <?php require_once("navbar.php") ?>
-<!--****************************************-->
+ <div class="modal fade" id="AgregarNuevoXml" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Subir XML <span class="fa fa-arrow-up"></span></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <table cellspacing="0" cellpadding="4">
+            <tr>
+              <td>
+                <label><b>* Solo se permiten archivos de tipo .XML</b></label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <form method="post" enctype="multipart/form-data" id="data" class="form-inline">
+                  <input type="file" name="fileXML[]" id="fileXML"  onChange="makeFileList();" multiple>
+                  <button type="submit" class="btn btn-primary">SUBIR XML</button>
+                </form>
+                <p>
+                  <strong>Files You Selected:</strong>
+                </p>
 
-<!-- Contenedor para cargar la tablad-->
-<div class="container-fluid" style="margin-top:20px;">
-  <div class="row">
-    <div class="col-sm-12">
-      <div class="card text-left">
-        <div class="card-header">
-          Cuentas por cobrar
-        </div>
-        <div class="card-body">
-          <span class="btn btn-primary" data-toggle="modal" data-target="#AgregarNuevoXml">
-            Agregar Nuevo <span class="fa fa-plus-circle">
-            </span>
-          </span>
-          <hr>
-        </div>
-        <div id="dataTable" class="dataTable" style="overflow-x: scroll;">
-          2 days ago
+                <ul id="fileList">
+                  <li>No Files Selected</li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <td id="innerExam">
+                <form method="POST" id="dataCFDI">
+                  <table cellspacing="0" cellpadding="5">
+                    <tbody id="tablaResultado"></tbody>
+                  </table>
+                  <br/>
+                  <input type="hidden" name="indiceInsert" id="indiceInsert" />
+                  <button type="submit" style="margin-right: auto;" class="btn btn-primary">GUARDAR</button>
+                </form>
+              </td>
+            </tr>
+          <table>
         </div>
       </div>
     </div>
   </div>
-</div>
-<!--********************************************-->
 
-<!--Modal para cargar Factura-->
-  <?php require_once("./modales/cargarFactura.php")?>  
-  
-<!--***********************************************************************-->
-  </body>
-</html>
-<script type="text/javascript">
-  $(document).ready(function(){
-    $('#dataTable').load('php/tablacuentascobrar.php')
-  });
-
-  // Leer archivo CFDI
+  <script>
+   // Leer archivo CFDI
   $("form#data").submit(function(e){
     e.preventDefault();
 
@@ -218,5 +221,4 @@
       ul.appendChild(li);
     }
   }
-
-</script>
+  </script>
