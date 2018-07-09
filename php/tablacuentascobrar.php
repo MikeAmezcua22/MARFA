@@ -13,10 +13,12 @@
         <td>UUID</td>
         <td>Fecha Emisión</td>
         <td>Dias Crédito</td>
+        <td>Total de Impuestos Trasladados</td>
         <td>Total</td>
         <td>Nombre del Emisor</td>
         <td>RFC del Emisor</td>
-        <td>Total de Impuestos Trasladados</td>
+        <td>Nombre del Receptor</td>
+        <td>RFC del Receptor</td>
         <td>Abonos</td>
         <td>Fecha Vencimiento</td>
         <td>Abonar</td>
@@ -25,17 +27,19 @@
     </thead>
     <tfoot class="pie-Tabla">
       <tr>
-        <td>UUID</td>
+      <td>UUID</td>
         <td>Fecha Emisión</td>
         <td>Dias Crédito</td>
+        <td>Total de Impuestos Trasladados</td>
         <td>Total</td>
         <td>Nombre del Emisor</td>
         <td>RFC del Emisor</td>
-        <td>Total de Impuestos Trasladados</td>
+        <td>Nombre del Receptor</td>
+        <td>RFC del Receptor</td>
         <td>Abonos</td>
         <td>Fecha Vencimiento</td>
         <td>Abonar</td>
-        <td>Eliminar</span></td>
+        <td>Eliminar</td>
       </tr>
     </tfoot>
     <tbody>
@@ -44,10 +48,12 @@
                     cpc.UUID,
                     cpc.FechaEmision,
                     cpc.DiasCredito,
+                    cpc.Total_ImpuestosTrasladados,
                     cpc.Total,
                     cpc.EmisorNombre,
                     cpc.EmisorRfc,
-                    cpc.Total_ImpuestosTrasladados,
+                    cpc.ReceptorNombre,
+                    cpc.ReceptorRFC,
                     cpc.FechaVencimiento,
                     (
                       SELECT  SUM(raf.abono) FROM relabonofactura raf WHERE raf.idFactura = cpc.IdFactura
@@ -65,28 +71,32 @@
                      $ver[6]."||".
                      $ver[7]."||".
                      $ver[8]."||".
-                     $ver[9];
+                     $ver[9]."||".
+                     $ver[10]."||".
+                     $ver[11];
        ?>
       <tr>
         <td><?php echo $ver[1] ?></td>
         <td><?php echo $ver[2] ?></td>
         <td><?php echo $ver[3] ?></td>
         <td><?php echo $ver[4] ?></td>
-        <td><?php echo utf8_encode($ver[5]) ?></td>
+        <td><?php echo $ver[5] ?></td>
         <td><?php echo $ver[6] ?></td>
         <td><?php echo $ver[7] ?></td>
-        <td><?php echo $ver[9] ?></td>
+        <td><?php echo $ver[8] ?></td>
+        <td><?php echo $ver[9]?></td>
+        <td><?php echo $ver[11]?></td>
         <td
           <?php
 
             $hoy = date('m/d/Y g:ia');
             $datetime1 = new DateTime($hoy);
-            $datetime2 = new DateTime($ver[8]);
+            $datetime2 = new DateTime($ver[10]);
             $interval = $datetime1->diff($datetime2);
             $diasDiferencia = $interval->format('%a');
 
 
-            if($ver[8] == '0000-00-00'){
+            if($ver[10] == '0000-00-00'){
               echo "style='background-color: #FFEB3B; color: black;'";
             }
             else if($diasDiferencia < 10){
@@ -107,17 +117,17 @@
 
             $hoy = date('m/d/Y g:ia');
             $datetime1 = new DateTime($hoy);
-            $datetime2 = new DateTime($ver[8]);
+            $datetime2 = new DateTime($ver[10]);
             $interval = $datetime1->diff($datetime2);
             $diasDiferencia = $interval->format('%a');
 
-            $date  = date_create($ver[8]);
+            $date  = date_create($ver[10]);
             $fecha = date_format($date, 'd/m/Y');
-            echo $ver[8] != '0000-00-00' ? $fecha : "Sin fecha";
+            echo $ver[10] != '0000-00-00' ? $fecha : "Sin fecha";
           ?>
         </td>
         <td>
-          <button class="btn btn-primary" onclick="abonarCuenta(<?php echo $ver[0] ?>,<?php echo "'".$ver[1]."'" ?>,<?php echo "'".$ver[4]."'" ?>)">
+          <button class="btn btn-primary" onclick="abonarCuenta(<?php echo $ver[0] ?>,<?php echo "'".$ver[1]."'" ?>,<?php echo "'".$ver[5]."'" ?>)">
             <i class="fa fa-money" aria-hidden="true"></i>
           </button>
         </td>
