@@ -56,7 +56,10 @@
                         <input type="text" name="CiudadCliente" value="" id="CiudadCliente" class="form-control input-sm">
                       </div>
                       <div class="col-12">
-                        <button class="btn btn-primary mt-2 mr-2" type="submit" name="addCliente"id="guardarnuevo">Agregar</button>
+                        <br>
+                      </div>
+                      <div class="col-12">
+                        <button class="btn btn-primary btn-sm btn-block " type="submit" name="addCliente"id="guardarnuevo">Agregar</button>
                       </div>
                   </form>
                 </div>

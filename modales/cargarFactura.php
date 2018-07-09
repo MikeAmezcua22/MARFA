@@ -1,3 +1,4 @@
+
 <div class="modal fade" id="AgregarNuevoXml" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
       <div class="modal-content">
@@ -8,7 +9,7 @@
           </button>
         </div>
         <div class="modal-body">
-          <table cellspacing="0" cellpadding="4">
+          <table cellspacing="0" cellpadding="4" border="0">
             <tr>
               <td>
                 <label><b>* Solo se permiten archivos de tipo .XML</b></label>
@@ -20,18 +21,22 @@
                   <input type="file" name="fileXML[]" id="fileXML"  onChange="makeFileList();" multiple>
                   <button type="submit" class="btn btn-primary">SUBIR XML</button>
                 </form>
+              </td>
+              <td style="display: none; ">
                 <p>
-                  <strong>Files You Selected:</strong>
+                  <strong>Archivos Seleccionados:</strong>
                 </p>
 
                 <ul id="fileList">
-                  <li>No Files Selected</li>
+                  <li>Ningún Archivo Seleccionado</li>
                 </ul>
               </td>
             </tr>
             <tr>
               <td id="innerExam">
-                <form method="POST" id="dataCFDI">
+                <!-- Formulario para guardar cfdi -->
+                
+                <form method="POST" id="dataCFDI">  
                   <table cellspacing="0" cellpadding="5">
                     <tbody id="tablaResultado"></tbody>
                   </table>
@@ -39,6 +44,7 @@
                   <input type="hidden" name="indiceInsert" id="indiceInsert" />
                   <button type="submit" style="margin-right: auto;" class="btn btn-primary">GUARDAR</button>
                 </form>
+
               </td>
             </tr>
           <table>

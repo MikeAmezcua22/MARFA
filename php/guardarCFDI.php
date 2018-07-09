@@ -3,6 +3,7 @@ require_once "conexion.php";
 $conexion=Conectarse();
 
 $indice = $_POST['indiceInsert'];
+$cliente = $_POST['selectCliente'];
 
 for($i=0; $i <= $indice; $i++){
     $uuid = $_POST['uuid'.$i];
@@ -21,6 +22,7 @@ for($i=0; $i <= $indice; $i++){
     $total = $_POST['total'.$i];
     $totalImpuestosTrasladados = $_POST['totalImpuestosTrasladados'.$i];
     $fhVencimiento = $_POST['fhVencimiento'.$i];
+    $receptorRFC = $_POST['rfcReceptor'.$i];
 
     $query = " INSERT INTO cuentas_por_cobrar ( UUID,
                                                 LugarExpedicion,
@@ -36,7 +38,8 @@ for($i=0; $i <= $indice; $i++){
                                                 TasaCuota,
                                                 TipoFactor,
                                                 Impuestos,
-                                                FechaVencimiento)
+                                                FechaVencimiento,
+                                                ReceptorRFC)
             VALUES( '".$uuid."',
                     '".$lugarExpedicion."',
                     '".$metodoPago."',
@@ -51,8 +54,9 @@ for($i=0; $i <= $indice; $i++){
                     '".$tasaCuota."',
                     '".$tipoFactor."',
                     '".$impuesto."',
-                    '".$fhVencimiento."'
-                    )";
+                    '".$fhVencimiento."',
+                    '".$receptorRFC."'
+                    );";
 
     $insert = mysql_query($query);    
 }

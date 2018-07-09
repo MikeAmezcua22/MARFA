@@ -54,7 +54,12 @@
             <div class="col-12">
               <label>Ciudad</label>
               <input type="text" name="CiudadClienteU" value="" id="CiudadClienteU" class="form-control input-sm">
-              <button class="btn btn-warning mt-2 mr-2" type="submit" name="ModCliente"  id="modificarcliente" >Modificar </button>
+            </div>
+            <div class="col-12">
+              <br>
+            </div>
+            <div class="col-12">
+              <button class="btn btn-warning btn-sm btn-block" type="submit" name="ModCliente"  id="modificarcliente" >Modificar </button>
             </div>
 
             </Form>
