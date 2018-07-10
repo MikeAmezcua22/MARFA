@@ -14,13 +14,37 @@
  <?php require_once("navbar.php") ?>
 <!--****************************************-->
 
-<!-- Contenedor para cargar la tablad-->
+<!-- Contenedor para cargar la tabla DE CUENTAS POR COBRAR-->
 <div class="container-fluid" style="margin-top:20px;">
   <div class="row">
     <div class="col-sm-12">
       <div class="card text-left">
         <div class="card-header">
           Cuentas por cobrar
+        </div>
+        <div class="card-body">
+          <span class="btn btn-primary" data-toggle="modal" data-target="#AgregarNuevoXml">
+            Agregar Nuevo <span class="fa fa-plus-circle">
+            </span>
+          </span>
+          <hr>
+        </div>
+        <div id="dataTable" class="dataTable" style="overflow-x: scroll;">
+          2 days ago
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--********************************************-->
+
+<!-- Contenedor para cargar la tabla DE CUENTAS POR COBRAR PAGADAS-->
+<div class="container-fluid" style="margin-top:20px;">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="card text-left">
+        <div class="card-header">
+          Facturas Pagadas
         </div>
         <div class="card-body">
           <span class="btn btn-primary" data-toggle="modal" data-target="#AgregarNuevoXml">

@@ -76,15 +76,15 @@
                      $ver[11];
        ?>
       <tr>
-        <td><?php echo $ver[1] ?></td>
+        <td style="font-weight:bold;"><?php echo $ver[1] ?></td>
         <td><?php echo $ver[2] ?></td>
         <td><?php echo $ver[3] ?></td>
         <td><?php echo $ver[4] ?></td>
         <td><?php echo $ver[5] ?></td>
         <td><?php echo $ver[6] ?></td>
-        <td><?php echo $ver[7] ?></td>
+        <td style="font-weight:bold;"><?php echo $ver[7] ?></td>
         <td><?php echo $ver[8] ?></td>
-        <td><?php echo $ver[9]?></td>
+        <td style="font-weight:bold;"><?php echo $ver[9]?></td>
         <td><?php echo $ver[11]?></td>
         <td
           <?php
@@ -103,10 +103,10 @@
               echo "style='background-color: #dc3545; color: black;'";
             }
             else if($diasDiferencia > 10 && $diasDiferencia < 20){
-              echo "style='background-color: blue; color: black;'";
+              echo "style='background-color: #6bc17b; color: black;'";
             }
             else if($diasDiferencia > 20){
-              echo "style='background-color: green; color: black;'";
+              echo "style='background-color: #6bc17b; color: black;'";
             }else{
               echo "style='background-color: #dc3545; color: black;'";
             }
@@ -125,12 +125,12 @@
             echo $ver[10] != '0000-00-00' ? $fecha : "Sin fecha";
           ?>
         </td>
-        <td>
+        <td align="center">
           <button class="btn btn-primary" onclick="abonarCuenta(<?php echo $ver[0] ?>,<?php echo "'".$ver[1]."'" ?>,<?php echo "'".$ver[5]."'" ?>,<?php echo "'".$ver[11]."'" ?>)">
-            <i class="fa fa-money" aria-hidden="true"></i>
+          <i class="fa fa-usd" aria-hidden="true"></i>
           </button>
         </td>
-        <td>
+        <td align="center">
           <button class="btn btn-danger" onclick="preguntarSiNoFactura('<?php echo $ver[0] ?>')">
             <i class="fa fa-times" aria-hidden="true"></i>
           </button>
