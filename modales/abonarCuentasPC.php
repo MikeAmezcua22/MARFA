@@ -21,6 +21,7 @@
         <div class="form-group">
             <input  value="" id="idFactura" name="idFactura">
             <input  value="" id="TotaldeFacAbono" name ="TotaldeFacAbono">
+            <input  value="" id="AbonoMomento" name ="AbonoMomento">
             <label>Cantidad Total: </label><label id="cantidadTotal" style="font-weight: bold;"></label></br>
             <label><span class="glyphicon glyphicon-user"></span>Abono cantidad: </label>
             <input type="number"

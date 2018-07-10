@@ -120,14 +120,13 @@
             $datetime2 = new DateTime($ver[10]);
             $interval = $datetime1->diff($datetime2);
             $diasDiferencia = $interval->format('%a');
-
             $date  = date_create($ver[10]);
             $fecha = date_format($date, 'd/m/Y');
             echo $ver[10] != '0000-00-00' ? $fecha : "Sin fecha";
           ?>
         </td>
         <td>
-          <button class="btn btn-primary" onclick="abonarCuenta(<?php echo $ver[0] ?>,<?php echo "'".$ver[1]."'" ?>,<?php echo "'".$ver[5]."'" ?>)">
+          <button class="btn btn-primary" onclick="abonarCuenta(<?php echo $ver[0] ?>,<?php echo "'".$ver[1]."'" ?>,<?php echo "'".$ver[5]."'" ?>,<?php echo "'".$ver[11]."'" ?>)">
             <i class="fa fa-money" aria-hidden="true"></i>
           </button>
         </td>
@@ -143,10 +142,7 @@
     </tbody>
   </table>
 </div>
-
-
 <script type="text/javascript">
-
 $(document).ready(function() {
     $('#iddatatable').DataTable();
 });

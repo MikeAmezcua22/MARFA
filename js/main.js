@@ -407,17 +407,20 @@ function preguntarSiNoFactura(id){
           function(){ alertify.error('Se cancelo')});
 }
 
-function abonarCuenta(factura, uuid, cantidadTotal){
+function abonarCuenta(factura, uuid, cantidadTotal,TotalAbono){
   var numeroFactura = document.getElementById("numeroFactura");
   var total = document.getElementById("cantidadTotal")
   var idFactura = document.getElementById("idFactura")
   var totalFactura = document.getElementById("totalFactura")
   var TotaldeFacAbono = document.getElementById("TotaldeFacAbono")
+  var AbonoMomento = document.getElementById("AbonoMomento")
 
   TotaldeFacAbono.value = cantidadTotal
   idFactura.value = factura
   total.textContent = " $"+ cantidadTotal
   numeroFactura.textContent = uuid
+  AbonoMomento.value = TotalAbono
+
   $("#myModal").modal()
 }
 
@@ -432,11 +435,13 @@ function limpiarContenido(){
     event.preventDefault();
     var Abono = document.getElementById("abonoEnviar");
     var TotalReal = document.getElementById("TotaldeFacAbono");
+    var TotalAbono = document.getElementById("AbonoMomento");
 
     console.log(Abono.value)
     console.log(TotalReal.value)
+    
 
-    if(parseInt(Abono.value) < parseInt(TotalReal.value)){
+    if((parseInt(Abono.value) < parseInt(TotalReal.value)) || (parseInt(TotalAbono.value+Abono.value) < parseInt(TotalReal.value))){
       jQuery.ajax({
         url:'php/enviarAbono.php',
         type:'POST',
@@ -455,7 +460,6 @@ function limpiarContenido(){
       $("#alertErrorAbono").css("display", "flex");
       setTimeout(function(){$("#alertErrorAbono").css("display", "none")}, 5000);
     }
-
     limpiarContenido()
   });
 
