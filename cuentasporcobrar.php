@@ -104,7 +104,7 @@
             };
             
             document.getElementById("tablaResultado").innerHTML += 
-                  " <tr><td colspan='4' height='30px'><b>** Factura Numero: "+ key +"</b></td></tr>"+
+                  " <tr><td colspan='4' height='30px' color='blue'><b>Factura Numero: "+ key +"</b></td></tr>"+
                   "<tr>"+
                   "    <td><b>UUID</b></td>"+
                   "    <td> "+

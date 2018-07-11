@@ -79,14 +79,14 @@
         <td style="font-weight:bold;"><?php echo $ver[1] ?></td>
         <td><?php echo $ver[2] ?></td>
         <td><?php echo $ver[3] ?></td>
-        <td><?php echo $ver[4] ?></td>
-        <td><?php echo $ver[5] ?></td>
+        <td style="font-weight:bold;text-align:right"><?php echo $ver[4] ?></td>
+        <td style="font-weight:bold;text-align:right"><?php echo $ver[5] ?></td>
         <td><?php echo $ver[6] ?></td>
         <td style="font-weight:bold;"><?php echo $ver[7] ?></td>
         <td><?php echo $ver[8] ?></td>
         <td style="font-weight:bold;"><?php echo $ver[9]?></td>
-        <td><?php echo $ver[11]?></td>
-        <td
+        <td style="font-weight:bold;text-align:right"><?php echo $ver[11]?></td>
+        <td 
           <?php
 
             $hoy = date('m/d/Y g:ia');
@@ -97,18 +97,18 @@
 
 
             if($ver[10] == '0000-00-00'){
-              echo "style='background-color: #FFEB3B; color: black;'";
+              echo "style='background-color: #FFEB3B; color: black;font-weight:bold;text-align:center'";
             }
             else if($diasDiferencia < 10){
-              echo "style='background-color: #dc3545; color: black;'";
+              echo "style='background-color: #dc3545; color: black;font-weight:bold;text-align:center'";
             }
             else if($diasDiferencia > 10 && $diasDiferencia < 20){
-              echo "style='background-color: #6bc17b; color: black;'";
+              echo "style='background-color: #6bc17b; color: black;font-weight:bold;text-align:center'";
             }
             else if($diasDiferencia > 20){
-              echo "style='background-color: #6bc17b; color: black;'";
+              echo "style='background-color: #6bc17b; color: black;font-weight:bold;text-align:center'";
             }else{
-              echo "style='background-color: #dc3545; color: black;'";
+              echo "style='background-color: #dc3545; color: black;font-weight:bold;text-align:center'";
             }
 
           ?>

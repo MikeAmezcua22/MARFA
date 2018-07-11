@@ -9,45 +9,31 @@
           </button>
         </div>
         <div class="modal-body">
-          <table cellspacing="0" cellpadding="4" border="0">
-            <tr>
-              <td>
-                <label><b>* Solo se permiten archivos de tipo .XML</b></label>
-              </td>
-            </tr>
-            <tr>
-              <td>
                 <form method="post" enctype="multipart/form-data" id="data" class="form-inline">
-                  <input type="file" name="fileXML[]" id="fileXML"  onChange="makeFileList();" multiple>
-                  <button type="submit" class="btn btn-primary">SUBIR XML</button>
+                <div class="col-12">
+                    <input type="file" name="fileXML[]" id="fileXML"  onChange="makeFileList();" multiple>
+                </div>  
+                <div  class="col-12">
+                  <button type="submit" class="btn btn-secondary btn-sm btn-block">SUBIR XML</button>
+                </div>
                 </form>
-              </td>
-              <td style="display: none; ">
-                <p>
-                  <strong>Archivos Seleccionados:</strong>
-                </p>
-
+              
+                  <strong style="display:none;">Archivos Seleccionados:</strong>
                 <ul id="fileList">
                   <li>Ningún Archivo Seleccionado</li>
                 </ul>
-              </td>
-            </tr>
-            <tr>
               <td id="innerExam">
                 <!-- Formulario para guardar cfdi -->
-                
                 <form method="POST" id="dataCFDI">  
-                  <table cellspacing="0" cellpadding="5">
+                  <table border="0" cellspacing="0" cellpadding="5">
                     <tbody id="tablaResultado"></tbody>
                   </table>
                   <br/>
                   <input type="hidden" name="indiceInsert" id="indiceInsert" />
-                  <button type="submit" style="margin-right: auto;" class="btn btn-primary">GUARDAR</button>
+                  <div class="col-12">
+                    <button type="submit" style="margin-right: auto;" class="btn btn-primary btn-sm btn-block">GUARDAR</button>
+                  </div>
                 </form>
-
-              </td>
-            </tr>
-          <table>
         </div>
       </div>
     </div>
