@@ -25,11 +25,17 @@
         </div>
         </li>
         <li class="nav-item dropdown">
-
         <a href="#" class="nav-link dropdown-toggle" id="menu-categoriascuentas" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-file-text" aria-hidden="true"></i> CUENTAS</a>
         <div class="dropdown-menu" arial-labelledby="menu-categoriascuentas">
             <a href="#" class="dropdown-item">Cuentas por pagar</a>
             <a href="cuentasporcobrar.php" class="dropdown-item">Cuentas por cobrar</a>
+        </div>
+        </li>
+        <li class="nav-item dropdown">
+        <a href="#" class="nav-link dropdown-toggle" id="menu-categoriascuentas" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-file-text" aria-hidden="true"></i> CUENTAS</a>
+        <div class="dropdown-menu" arial-labelledby="menu-categoriascuentas">
+            <a href="#" class="dropdown-item">Cuentas pagadas</a>
+            <a href="cuentascobradas.php" class="dropdown-item">Cuentas cobradas</a>
         </div>
         </li>
     </ul>
