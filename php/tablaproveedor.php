@@ -92,7 +92,8 @@
               <td><button class="btn btn-danger" onclick="preguntarSiNoProveedor('<?php echo $ver[0] ?>')"><i class="fa fa-times" aria-hidden="true"></i></button></td>
             </tr>
           <?php
-          }?>
+          }
+          ?>
         </tbody>
     </table>
 <script type="text/javascript">

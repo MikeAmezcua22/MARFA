@@ -2,6 +2,9 @@
     Autor:MAAA
     Descripción:Tabla de cuentas cobradas
 -->
+<?php
+    include "conexion.php"
+?>
 <table class="table table-hover table-condensed" id="iddatatable-cuentascobradas" class="dataTable">
     <thead class="encabezado-tabla">
       <tr>
@@ -25,24 +28,21 @@
         <td>RFC del Receptor</td>
         <td>Nombre del Emisor</td>
         <td>RFC del Emisor</td>
-
       </tr>
     </tfoot>
     <tbody>
         <?php 
-            $sql="SELECT
-            UUID,
-            FechaEmision,
-            Total_ImpuestosTrasladados,
-            Total,
-            ReceptorNombre,
-            ReceptorRFC,
-            EmisorNombre,
-            EmisorRfc
-        FROM
-            cuentas_por_cobrar
-        WHERE
-            BolPagad = 0";
+            $sql="SELECT IdFactura, 
+                        UUID,
+                        FechaEmision,
+                        Total_ImpuestosTrasladados,
+                        Total,
+                        ReceptorNombre,
+                        ReceptorRFC,
+                        EmisorNombre,
+                        EmisorRfc
+                        FROM cuentas_por_cobrar
+                        WHERE BolPagad = 1";
          $result=mysql_query($sql);
          while($ver=mysql_fetch_row($result)){
            $datos=$ver[0]."||".
