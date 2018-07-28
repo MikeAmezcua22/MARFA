@@ -13,7 +13,6 @@
           <td>Rfc Cliente</td>
           <td>Razón social</td>
           <td>Estado del cliente</td>
-          <td>Dias crédito</td>
           <td>Saldo cliente</td>
           <td>Telefono Contacto</td>
           <td>Calle</td>
@@ -30,7 +29,6 @@
           <td>Rfc Cliente</td>
           <td>Razón social</td>
           <td>Estado del cliente</td>
-          <td>Dias crédito</td>
           <td>Saldo cliente</td>
           <td>Telefono Contacto</td>
           <td>Calle</td>
@@ -47,7 +45,6 @@
                     RfcCliente,
                     RazonSocial,
                     EstadoCliente,
-                    DiasCredito,
                     SaldoCliente,
                     TelefonoContacto,
                     Calle,
@@ -68,8 +65,7 @@
                    $ver[7]."||".
                    $ver[8]."||".
                    $ver[9]."||".
-                   $ver[10]."||".
-                   $ver[11];
+                   $ver[10];
             ?>
             <tr>
               <td><?php echo $ver[1] ?></td>
@@ -81,8 +77,7 @@
               <td><?php echo $ver[7] ?></td>
               <td><?php echo $ver[8] ?></td>
               <td><?php echo $ver[9] ?></td>
-              <td><?php echo $ver[10] ?></td>
-              <td><?php echo $ver[11] ?></td>
+        
               <td>
               <button class="btn btn-warning" data-toggle="modal" data-target="#ModalEdicion"
               onclick="agregaform('<?php echo $datos ?>')"><i class="fa fa-pencil" aria-hidden="true"></i>

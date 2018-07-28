@@ -12,7 +12,7 @@
       <tr>
         <td>UUID</td>
         <td>Fecha Emisión</td>
-        <td>Dias Crédito</td>
+        
         <td>Total de Impuestos Trasladados</td>
         <td>Total</td>
         <td>Nombre del Emisor</td>
@@ -29,7 +29,7 @@
       <tr>
       <td>UUID</td>
         <td>Fecha Emisión</td>
-        <td>Dias Crédito</td>
+       
         <td>Total de Impuestos Trasladados</td>
         <td>Total</td>
         <td>Nombre del Emisor</td>
@@ -47,7 +47,6 @@
       $SQL="SELECT 	cpc.IdFactura,
                     cpc.UUID,
                     cpc.FechaEmision,
-                    cpc.DiasCredito,
                     cpc.Total_ImpuestosTrasladados,
                     cpc.Total,
                     cpc.EmisorNombre,
@@ -72,8 +71,7 @@
                      $ver[7]."||".
                      $ver[8]."||".
                      $ver[9]."||".
-                     $ver[10]."||".
-                     $ver[11];
+                     $ver[10];
        ?>
       <tr>
         <td style="font-weight:bold;"><?php echo $ver[1] ?></td>
@@ -84,19 +82,18 @@
         <td><?php echo $ver[6] ?></td>
         <td style="font-weight:bold;"><?php echo $ver[7] ?></td>
         <td><?php echo $ver[8] ?></td>
-        <td style="font-weight:bold;"><?php echo $ver[9]?></td>
-        <td style="font-weight:bold;text-align:right"><?php echo $ver[11]?></td>
+        <td style="font-weight:bold;text-align:right"><?php echo $ver[10]?></td>
         <td 
           <?php
 
             $hoy = date('m/d/Y g:ia');
             $datetime1 = new DateTime($hoy);
-            $datetime2 = new DateTime($ver[10]);
+            $datetime2 = new DateTime($ver[9]);
             $interval = $datetime1->diff($datetime2);
             $diasDiferencia = $interval->format('%a');
 
 
-            if($ver[10] == '0000-00-00'){
+            if($ver[9] == '0000-00-00'){
               echo "style='background-color: #FFEB3B; color: black;font-weight:bold;text-align:center'";
             }
             else if($diasDiferencia < 10){
@@ -112,21 +109,21 @@
             }
 
           ?>
-        >
+        
           <?php
 
             $hoy = date('m/d/Y g:ia');
             $datetime1 = new DateTime($hoy);
-            $datetime2 = new DateTime($ver[10]);
+            $datetime2 = new DateTime($ver[9]);
             $interval = $datetime1->diff($datetime2);
             $diasDiferencia = $interval->format('%a');
-            $date  = date_create($ver[10]);
+            $date  = date_create($ver[9]);
             $fecha = date_format($date, 'd/m/Y');
             echo $ver[10] != '0000-00-00' ? $fecha : "Sin fecha";
           ?>
         </td>
         <td align="center">
-          <button class="btn btn-primary" onclick="abonarCuenta(<?php echo $ver[0] ?>,<?php echo "'".$ver[1]."'" ?>,<?php echo "'".$ver[5]."'" ?>,<?php echo "'".$ver[11]."'" ?>)">
+          <button class="btn btn-primary" onclick="abonarCuenta(<?php echo $ver[0] ?>,<?php echo "'".$ver[1]."'" ?>,<?php echo "'".$ver[3]."'" ?>,<?php echo "'".$ver[10]."'" ?>)">
           <i class="fa fa-usd" aria-hidden="true"></i>
           </button>
         </td>

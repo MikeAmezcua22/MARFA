@@ -16,6 +16,7 @@
   <?php require_once("/modales/altaclientes.php")?>
   <?php require_once("/modales/altaclientes.php")?>
   <?php require_once("/modales/modclientes.php")?>
+  
   <!--***********************************************************************-->
 
   <div class="container-fluid" style="margin-top:20px;">

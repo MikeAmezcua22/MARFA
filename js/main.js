@@ -441,7 +441,7 @@ function limpiarContenido(){
     console.log(TotalReal.value)
     
 
-    if((parseInt(Abono.value) < parseInt(TotalReal.value)) || (parseInt(TotalAbono.value + Abono.value) < parseInt(TotalReal.value))){
+    if(parseInt(Abono.value) < parseInt(TotalReal.value)){
       jQuery.ajax({
         url:'php/enviarAbono.php',
         type:'POST',

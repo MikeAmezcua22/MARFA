@@ -17,7 +17,7 @@
     <div class="col-sm-12">
       <div class="card text-left">
         <div class="card-header">
-          Facturas Pagadas
+          Facturas Cobradas
         </div>
         <div class="card-body">
           <hr>

@@ -19,15 +19,11 @@
                 <label>Razón Social</label>
                 <input type="text" name="RazonSocialU" value="" id="RazonSocialU" class="form-control input-sm">
             </div>
-            <div class="col-4">
+            <div class="col-6">
               <label>Estado del Cliente</label>
               <input type="text" name="EstadoClienteU" value="" id="EstadoClienteU" class="form-control input-sm">
            </div>
-           <div class="col-4">
-              <label>Dias Crédito</label>
-              <input type="text" name="DiasCreditoU" value="" id="DiasCreditoU" class="form-control input-sm">
-          </div>
-          <div class="col-4">
+          <div class="col-6">
               <label>Saldo del Cliente</label>
               <input type="text" name="SaldoClienteU" value="" id="SaldoClienteU" class="form-control input-sm">
           </div>
