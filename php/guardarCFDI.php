@@ -57,7 +57,7 @@ for($i=0; $i <= $indice; $i++){
                     '".$fhVencimiento."',
                     '".$receptorRFC."'
                     );";
-
+    echo $query;
     $insert = mysql_query($query);    
 }
 

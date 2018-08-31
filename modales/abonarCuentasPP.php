@@ -1,12 +1,12 @@
 
 <!-- Modal -->
-<div class="modal fade" id="myModal" role="dialog">
+<div class="modal fade" id="myModalPP" role="dialog">
 <div class="modal-dialog">
     <!-- Modal content-->
     <div class="modal-content">
     <div class="modal-header">
         <label> Abonar para factura(uuid):</label>
-        <label id="numeroFactura" style="font-weight: bold;"></label>
+        <label id="numeroFacturaPP" style="font-weight: bold;"></label>
     </div>
     <div class="modal-body">
         <!-- Alert -->
@@ -17,15 +17,15 @@
         Error
         </div>
         <!-- ***** -->
-        <form role="form" id="formAbono">
+        <form role="form" id="formAbonoPP">
         <div class="form-group">
-        <div class="col-12"><input  id="idFactura" name="idFactura" hidden=""></div>
-            <input  id="TotaldeFacAbono" name ="TotaldeFacAbono" hidden="">
-            <input  id="AbonoMomento" name ="AbonoMomento" hidden="">
-            <label>Cantidad Total: </label><label id="cantidadTotal" style="font-weight: bold;"></label></br>
+        <div class="col-12"><input  id="idFacturaPP" name="idFactura" hidden=""></div>
+            <input  id="TotaldeFacAbonoPP" name ="TotaldeFacAbono" hidden="">
+            <input  id="AbonoMomentoPP" name ="AbonoMomento" hidden="">
+            <label>Cantidad Total: </label><label id="cantidadTotalPP" style="font-weight: bold;"></label></br>
             <label><span class="glyphicon glyphicon-user"></span>Abono cantidad: </label>
             <input type="number"
-            class="form-control" id="abonoEnviar" name="abonoEnviar" placeholder="$" required="true">
+            class="form-control" id="abonoEnviarPP" name="abonoEnviar" placeholder="$" required="true">
         </div>
         <button type="submit" class="btn btn-default btn-success btn-block">
             <span class="glyphicon glyphicon-off"></span>

@@ -77,6 +77,7 @@
               <td><?php echo $ver[7] ?></td>
               <td><?php echo $ver[8] ?></td>
               <td><?php echo $ver[9] ?></td>
+              <td><?php echo $ver[10] ?></td>
         
               <td>
               <button class="btn btn-warning" data-toggle="modal" data-target="#ModalEdicion"

@@ -1,8 +1,9 @@
-<!--
+<?php
+/*
     Autor:MAAA
-    Descripción: Modal para dar de alta CLIENTES
--->
-<div class="modal fade" id="ModalRegistro" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    Descripción: Modal para dar de alta CLIENTES*/
+
+echo '<div class="modal fade" id="ModalRegistro" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
@@ -65,4 +66,5 @@
             </div>
           </div>
         </div>
-      </div>
+      </div>';
+    ?>

@@ -7,7 +7,7 @@
 
       <?php require_once("../modales/abonarCuentasPC.php")?> 
 
-  <table class="table table-hover table-condensed" id="iddatatable" class="dataTable">
+  <table class="table table-hover table-condensed" id="iddatatablecxp" class="dataTable">
     <thead class="encabezado-tabla">
       <tr>
         <td>UUID</td>
@@ -28,6 +28,7 @@
       <tr>
       <td>UUID</td>
         <td>Fecha Emisión</td>
+       
         <td>Total de Impuestos Trasladados</td>
         <td>Total</td>
         <td>Nombre del Emisor</td>
@@ -42,20 +43,20 @@
     </tfoot>
     <tbody>
       <?php
-      $SQL="SELECT 	cpc.IdFactura,
-                    cpc.UUID,
-                    cpc.FechaEmision,
-                    cpc.Total_ImpuestosTrasladados,
-                    cpc.Total,
-                    cpc.EmisorNombre,
-                    cpc.EmisorRfc,
-                    cpc.ReceptorNombre,
-                    cpc.ReceptorRFC,
+      $SQL="SELECT 	cpp.IdFactura,
+                    cpp.UUID,
+                    cpp.FechaEmision,
+                    cpp.Total_ImpuestosTrasladados,
+                    cpp.Total,
+                    cpp.EmisorNombre,
+                    cpp.EmisorRfc,
+                    cpp.ReceptorNombre,
+                    cpp.ReceptorRFC,
                     (
-                      SELECT  SUM(raf.abono) FROM relabonofactura raf WHERE raf.idFactura = cpc.IdFactura
+                      SELECT  SUM(raf.abono) FROM relabonofacturacxp raf WHERE raf.idFactura = cpp.IdFactura
                     ) AS abonado,
-                    cpc.FechaVencimiento
-            FROM cuentas_por_cobrar cpc";
+                    cpp.FechaVencimiento
+            FROM cuentas_por_pagar cpp";
 
             $result=mysql_query($SQL);
             while($ver=mysql_fetch_row($result)){
@@ -121,15 +122,16 @@
           ?>
         </td>
         <td align="center">
-          <button class="btn btn-primary" onclick="abonarCuenta(<?php echo $ver[0] ?>,<?php echo "'".$ver[1]."'" ?>,<?php echo "'".$ver[3]."'" ?>,<?php echo "'".$ver[9]."'" ?>)">
+          <button class="btn btn-primary" onclick="abonarCuentaCxP(<?php echo $ver[0] ?>,<?php echo "'".$ver[1]."'" ?>,<?php echo "'".$ver[3]."'" ?>,<?php echo "'".$ver[9]."'" ?>)">
           <i class="fa fa-usd" aria-hidden="true"></i>
           </button>
         </td>
         <td align="center">
-          <button class="btn btn-danger" onclick="preguntarSiNoFactura('<?php echo $ver[0] ?>')">
+          <button class="btn btn-danger" onclick="preguntarSiNoFacturaCxP('<?php echo $ver[0] ?>')">
             <i class="fa fa-times" aria-hidden="true"></i>
           </button>
         </td>
+ 
       </tr>
       <?php
         }
@@ -139,6 +141,6 @@
 </div>
 <script type="text/javascript">
 $(document).ready(function() {
-    $('#iddatatable').DataTable();
+    $('#iddatatablecxp').DataTable();
 });
 </script>

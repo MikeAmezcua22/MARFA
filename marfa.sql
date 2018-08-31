@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 29-07-2018 a las 00:31:00
+-- Tiempo de generación: 06-08-2018 a las 14:56:51
 -- Versión del servidor: 10.1.19-MariaDB
 -- Versión de PHP: 5.6.28
 
@@ -326,7 +326,8 @@ CREATE TABLE `usuarios` (
 INSERT INTO `usuarios` (`IdUsuarios`, `NombreUsuario`, `Nombre`, `ApellidoPaterno`, `ApellidoMaterno`, `Password`, `Email`, `TelContactoUsuario`, `FechaNacimiento`, `IdTipoUsuario`) VALUES
 (7, 'Marlo', 'Marlo', 'Jimenez', 'Perez', '1254', 'miguel_22_t@hotmail.com', '3148726003', '1996-10-23', 1),
 (8, 'MiguelA22', 'Miguel', 'Amezcua', 'Alcantar', '123456', 'miguel_22_t@hotmail.com', '3148726003', '1996-10-10', 1),
-(9, 'Miguel45', 'Miguel', 'Amezcua', 'Alcantar', 'Mike2211', 'asocmarctkd@gmail.com', '3148726003', '1996-11-10', 1);
+(9, 'Miguel45', 'Miguel', 'Amezcua', 'Alcantar', 'Mike2211', 'asocmarctkd@gmail.com', '3148726003', '1996-11-10', 1),
+(10, 'Obedsito', 'Obed', 'Rafael', 'Ramirez', '1234', 'miguel_22_t@hotmail.com', '3148726003', '0000-00-00', 1);
 
 --
 -- Índices para tablas volcadas
@@ -433,7 +434,7 @@ ALTER TABLE `tipousuario`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `IdUsuarios` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `IdUsuarios` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- Restricciones para tablas volcadas
 --

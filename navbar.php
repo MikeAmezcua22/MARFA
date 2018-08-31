@@ -27,7 +27,7 @@
         <li class="nav-item dropdown">
         <a href="#" class="nav-link dropdown-toggle" id="menu-categoriascuentas" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-file-text" aria-hidden="true"></i> CUENTAS</a>
         <div class="dropdown-menu" arial-labelledby="menu-categoriascuentas">
-            <a href="#" class="dropdown-item">Cuentas por pagar</a>
+            <a href="cuentasporpagar.php" class="dropdown-item">Cuentas por pagar</a>
             <a href="cuentasporcobrar.php" class="dropdown-item">Cuentas por cobrar</a>
         </div>
         </li>
@@ -40,8 +40,24 @@
         </li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
-    <button class="btn btn-danger cerrar-sesion" type="submit"><span><i class="fa fa-window-close"></span></i>&nbsp;Cerrar Sesión</button>
+    <button class="btn btn-danger cerrar-sesion" type="submit"><span><i class="fa fa-window-close"></span></i>&nbsp;<a href="cerrarsesion.php">Cerrar Sesión</a></button>
     </ul>
     </div>
+    
 </nav>
+<div class="footer">
 
+    <span><i class="fa fa-user"></i><label id="NombrePila" class="text-white"></label></span>
+
+
+   
+</div>
+
+<script type="text/javascript">
+    $( window ).on( "load",function(){
+      var Nombre = $('#NombrePila');
+      var NombreUsuario = localStorage.getItem("Nombre")
+      var ApellidoUsuario = localStorage.getItem("ApellidoPaterno")
+      Nombre.text(" "+NombreUsuario+" "+ApellidoUsuario);
+    });
+</script>

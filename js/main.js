@@ -14,6 +14,8 @@ jQuery(document).on('submit','#formlg',function(event){
   })
   .done(function(res){
     console.log(res)
+    console.log(res.Nombre)
+    console.log(res.ApellidoPaterno)
     if(res.error === true){
       $('#err').css('display','inline');
 
@@ -22,6 +24,8 @@ jQuery(document).on('submit','#formlg',function(event){
 
     if(parseInt(res.tipoUsuario) === 1){
       window.location.href = "admin.php";
+      localStorage.setItem("Nombre",res.Nombre)
+      localStorage.setItem("ApellidoPaterno",res.ApellidoPaterno)
     }
 
     if(parseInt(res.tipoUsuario) === 2){
@@ -399,6 +403,7 @@ function eliminarDatosUsuario(id){
     }
   });
 }
+
 //Este modulo es para eliminar una FACTURA
 
 function preguntarSiNoFactura(id){
@@ -406,6 +411,68 @@ function preguntarSiNoFactura(id){
           function(){ eliminarDatosFactura(id) },
           function(){ alertify.error('Se cancelo')});
 }
+
+function eliminarDatosFactura(id){
+	cadena="id=" + id;
+  $.ajax({
+    type:"POST",
+    url:"php/eliminarDatosFactura.php",
+    data:cadena,
+    success:function(r){
+      console.log(r)
+      if(r==1){
+        $('#dataTable').load('php/tablacuentascobrar.php');
+        alertify.success("¡Eliminado con exito!");
+      }else{
+        alertify.error("No fue posible eliminar el registro");
+      }
+    }
+  });
+}
+
+function revisarInput(valor){
+  var abono = document.getElementById("abonoEnviar");
+
+  console.log(abono.value);
+}
+
+//Este modulo es para eliminar una FACTURA
+
+function preguntarSiNoFacturaCxP(id){
+	alertify.confirm('Eliminar Datos', '¿Esta seguro de eliminar este registro?',
+          function(){ eliminarDatosFacturaCxP(id) },
+          function(){ alertify.error('Se cancelo')});
+}
+
+function eliminarDatosFacturaCxP(id){
+	cadena="id=" + id;
+  $.ajax({
+    type:"POST",
+    url:"php/eliminarDatosFacturacxp.php",
+    data:cadena,
+    success:function(r){
+      console.log(r)
+      if(r==1){
+        $('#dataTable').load('php/tablacuentascobrar.php');
+        alertify.success("¡Eliminado con exito!");
+      }else{
+        alertify.error("No fue posible eliminar el registro");
+      }
+    }
+  });
+}
+
+function revisarInput(valor){
+  var abono = document.getElementById("abonoEnviar");
+
+  console.log(abono.value);
+}
+
+
+
+
+
+//Abornos
 
 function abonarCuenta(factura, uuid, cantidadTotal,TotalAbono){
   var numeroFactura = document.getElementById("numeroFactura");
@@ -440,7 +507,65 @@ function limpiarContenido(){
     console.log(Abono.value)
     console.log(TotalReal.value)
     
+    if(parseInt(Abono.value) < parseInt(TotalReal.value)){
+      jQuery.ajax({
+        url:'php/enviarAbono.php',
+        type:'POST',
+        dataType:'json',
+        data: $(this).serialize()
+      })
+      .done(function(res){
+        location.reload()
+      })
+      .fail(function(resp){
+        console.log(resp.responseText);
+      })
 
+      limpiarContenido()
+    }else{
+      $("#alertErrorAbono").css("display", "flex");
+      setTimeout(function(){$("#alertErrorAbono").css("display", "none")}, 5000);
+    }
+    limpiarContenido()
+  });
+
+
+  //Abonos cuentas por pagar
+
+function abonarCuenta(factura, uuid, cantidadTotal,TotalAbono){
+  var numeroFactura = document.getElementById("numeroFactura");
+  var total = document.getElementById("cantidadTotal")
+  var idFactura = document.getElementById("idFactura")
+  var totalFactura = document.getElementById("totalFactura")
+  var TotaldeFacAbono = document.getElementById("TotaldeFacAbono")
+  var AbonoMomento = document.getElementById("AbonoMomento")
+
+  TotaldeFacAbono.value = cantidadTotal
+  idFactura.value = factura
+  total.textContent = " $"+ cantidadTotal
+  numeroFactura.textContent = uuid
+  AbonoMomento.value = TotalAbono
+
+  $("#myModal").modal()
+}
+
+function limpiarContenido(){
+  var Abono = document.getElementById("abonoEnviar");
+  Abono.value = ""
+}
+
+//Formulario de abono cuentas por pagar
+
+  jQuery(document).on('submit','#formAbono',function(event){
+
+    event.preventDefault();
+    var Abono = document.getElementById("abonoEnviar");
+    var TotalReal = document.getElementById("TotaldeFacAbono");
+    var TotalAbono = document.getElementById("AbonoMomento");
+
+    console.log(Abono.value)
+    console.log(TotalReal.value)
+    
     if(parseInt(Abono.value) < parseInt(TotalReal.value)){
       jQuery.ajax({
         url:'php/enviarAbono.php',
@@ -465,26 +590,3 @@ function limpiarContenido(){
 
 
 
-function eliminarDatosFactura(id){
-	cadena="id=" + id;
-  $.ajax({
-    type:"POST",
-    url:"php/eliminarDatosFactura.php",
-    data:cadena,
-    success:function(r){
-      console.log(r)
-      if(r==1){
-        $('#dataTable').load('php/tablacuentascobrar.php');
-        alertify.success("¡Eliminado con exito!");
-      }else{
-        alertify.error("No fue posible eliminar el registro");
-      }
-    }
-  });
-}
-
-function revisarInput(valor){
-  var abono = document.getElementById("abonoEnviar");
-
-  console.log(abono.value);
-}

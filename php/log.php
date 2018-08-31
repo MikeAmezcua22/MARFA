@@ -5,7 +5,9 @@ include '/conexion.php';
   $password = $_POST['password'];
 //Se crea la consulta para hacer que coincidan los POST con los valores de la tabla usuario
   $select = " SELECT NombreUsuario,
-                     IdTipoUsuario
+                     IdTipoUsuario,
+                     Nombre,
+                     ApellidoPaterno
               FROM usuarios
               WHERE NombreUsuario = '".$usuario."'
               AND Password = '".$password."'";
@@ -18,6 +20,8 @@ include '/conexion.php';
 
     echo json_encode(array('nombreUsuario'=> $datos{'NombreUsuario'},
                            'tipoUsuario' => $datos{'IdTipoUsuario'},
+                           'Nombre' => $datos{'Nombre'},
+                           'ApellidoPaterno' => $datos{'ApellidoPaterno'},
                            'error' => false
                           )
                     );
