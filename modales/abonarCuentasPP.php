@@ -19,13 +19,13 @@
         <!-- ***** -->
         <form role="form" id="formAbonoPP">
         <div class="form-group">
-        <div class="col-12"><input  id="idFacturaPP" name="idFactura" hidden=""></div>
-            <input  id="TotaldeFacAbonoPP" name ="TotaldeFacAbono" hidden="">
-            <input  id="AbonoMomentoPP" name ="AbonoMomento" hidden="">
+        <div class="col-12"><input  id="idFacturaPP" name="idFacturaPP" hidden=""></div>
+            <input  id="TotaldeFacAbonoPP" name ="TotaldeFacAbonoPP" hidden="">
+            <input  id="AbonoMomentoPP" name ="AbonoMomentoPP" hidden="">
             <label>Cantidad Total: </label><label id="cantidadTotalPP" style="font-weight: bold;"></label></br>
             <label><span class="glyphicon glyphicon-user"></span>Abono cantidad: </label>
             <input type="number"
-            class="form-control" id="abonoEnviarPP" name="abonoEnviar" placeholder="$" required="true">
+            class="form-control" id="abonoEnviarPP" name="abonoEnviarPP" placeholder="$" required="true">
         </div>
         <button type="submit" class="btn btn-default btn-success btn-block">
             <span class="glyphicon glyphicon-off"></span>
