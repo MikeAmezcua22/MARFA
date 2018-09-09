@@ -121,7 +121,7 @@
           ?>
         </td>
         <td align="center">
-          <button class="btn btn-primary" onclick="abonarCuenta(<?php echo $ver[0] ?>,<?php echo "'".$ver[1]."'" ?>,<?php echo "'".$ver[3]."'" ?>,<?php echo "'".$ver[9]."'" ?>)">
+          <button class="btn btn-primary" onclick="abonarCuenta(<?php echo $ver[0] ?>,<?php echo "'".$ver[1]."'" ?>,<?php echo "'".$ver[4]."'" ?>,<?php echo "'".$ver[9]."'" ?>)">
           <i class="fa fa-usd" aria-hidden="true"></i>
           </button>
         </td>

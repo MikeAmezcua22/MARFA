@@ -532,13 +532,13 @@ function limpiarContenido(){
 
   //Abonos cuentas por pagar
 
-function abonarCuenta(factura, uuid, cantidadTotal,TotalAbono){
-  var numeroFactura = document.getElementById("numeroFactura");
-  var total = document.getElementById("cantidadTotal")
-  var idFactura = document.getElementById("idFactura")
+function abonarCuentaCxP(factura, uuid, cantidadTotal,TotalAbono){
+  var numeroFactura = document.getElementById("numeroFacturaPP");
+  var total = document.getElementById("cantidadTotalPP")
+  var idFactura = document.getElementById("idFacturaPP")
   var totalFactura = document.getElementById("totalFactura")
-  var TotaldeFacAbono = document.getElementById("TotaldeFacAbono")
-  var AbonoMomento = document.getElementById("AbonoMomento")
+  var TotaldeFacAbono = document.getElementById("TotaldeFacAbonoPP")
+  var AbonoMomento = document.getElementById("AbonoMomentoPP")
 
   TotaldeFacAbono.value = cantidadTotal
   idFactura.value = factura
@@ -546,29 +546,29 @@ function abonarCuenta(factura, uuid, cantidadTotal,TotalAbono){
   numeroFactura.textContent = uuid
   AbonoMomento.value = TotalAbono
 
-  $("#myModal").modal()
+  $("#myModalPP").modal()
 }
 
 function limpiarContenido(){
-  var Abono = document.getElementById("abonoEnviar");
+  var Abono = document.getElementById("abonoEnviarPP");
   Abono.value = ""
 }
 
 //Formulario de abono cuentas por pagar
 
-  jQuery(document).on('submit','#formAbono',function(event){
+  jQuery(document).on('submit','#formAbonoPP',function(event){
 
     event.preventDefault();
-    var Abono = document.getElementById("abonoEnviar");
-    var TotalReal = document.getElementById("TotaldeFacAbono");
-    var TotalAbono = document.getElementById("AbonoMomento");
+    var Abono = document.getElementById("abonoEnviarPP");
+    var TotalReal = document.getElementById("TotaldeFacAbonoPP");
+    var TotalAbono = document.getElementById("AbonoMomentoPP");
 
     console.log(Abono.value)
     console.log(TotalReal.value)
     
     if(parseInt(Abono.value) < parseInt(TotalReal.value)){
       jQuery.ajax({
-        url:'php/enviarAbono.php',
+        url:'php/enviarAbonoPP.php',
         type:'POST',
         dataType:'json',
         data: $(this).serialize()

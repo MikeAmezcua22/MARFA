@@ -19,9 +19,9 @@
         <!-- ***** -->
         <form role="form" id="formAbonoPP">
         <div class="form-group">
-        <div class="col-12"><input  id="idFacturaPP" name="idFacturaPP" hidden=""></div>
-            <input  id="TotaldeFacAbonoPP" name ="TotaldeFacAbonoPP" hidden="">
-            <input  id="AbonoMomentoPP" name ="AbonoMomentoPP" hidden="">
+        <div class="col-12"><input  id="idFacturaPP" name="idFacturaPP" ></div>
+            <input  id="TotaldeFacAbonoPP" name ="TotaldeFacAbonoPP" >
+            <input  id="AbonoMomentoPP" name ="AbonoMomentoPP" >
             <label>Cantidad Total: </label><label id="cantidadTotalPP" style="font-weight: bold;"></label></br>
             <label><span class="glyphicon glyphicon-user"></span>Abono cantidad: </label>
             <input type="number"

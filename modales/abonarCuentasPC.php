@@ -19,9 +19,9 @@
         <!-- ***** -->
         <form role="form" id="formAbono">
         <div class="form-group">
-        <div class="col-12"><input  id="idFactura" name="idFactura" hidden=""></div>
-            <input  id="TotaldeFacAbono" name ="TotaldeFacAbono" hidden="">
-            <input  id="AbonoMomento" name ="AbonoMomento" hidden="">
+        <div class="col-12"><input  id="idFactura" name="idFactura" ></div>
+            <input  id="TotaldeFacAbono" name ="TotaldeFacAbono" >
+            <input  id="AbonoMomento" name ="AbonoMomento" >
             <label>Cantidad Total: </label><label id="cantidadTotal" style="font-weight: bold;"></label></br>
             <label><span class="glyphicon glyphicon-user"></span>Abono cantidad: </label>
             <input type="number"

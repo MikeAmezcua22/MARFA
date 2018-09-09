@@ -5,7 +5,7 @@
 <div>
       <!-- Incio de modal para abonos -->
 
-      <?php require_once("../modales/abonarCuentasPC.php")?> 
+      <?php require_once("../modales/abonarCuentasPP.php")?> 
 
   <table class="table table-hover table-condensed" id="iddatatablecxp" class="dataTable">
     <thead class="encabezado-tabla">
@@ -122,7 +122,7 @@
           ?>
         </td>
         <td align="center">
-          <button class="btn btn-primary" onclick="abonarCuentaCxP(<?php echo $ver[0] ?>,<?php echo "'".$ver[1]."'" ?>,<?php echo "'".$ver[3]."'" ?>,<?php echo "'".$ver[9]."'" ?>)">
+          <button class="btn btn-primary" onclick="abonarCuentaCxP(<?php echo $ver[0] ?>,<?php echo "'".$ver[1]."'" ?>,<?php echo "'".$ver[4]."'" ?>,<?php echo "'".$ver[9]."'" ?>)">
           <i class="fa fa-usd" aria-hidden="true"></i>
           </button>
         </td>
