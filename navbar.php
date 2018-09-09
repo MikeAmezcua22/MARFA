@@ -34,13 +34,13 @@
         <li class="nav-item dropdown">
         <a href="#" class="nav-link dropdown-toggle" id="menu-categoriascuentas" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-file-text" aria-hidden="true"></i> CUENTAS</a>
         <div class="dropdown-menu" arial-labelledby="menu-categoriascuentas">
-            <a href="#" class="dropdown-item">Cuentas pagadas</a>
+            <a href="cuentaspagadas.php" class="dropdown-item">Cuentas pagadas</a>
             <a href="cuentascobradas.php" class="dropdown-item">Cuentas cobradas</a>
         </div>
         </li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
-    <button class="btn btn-danger cerrar-sesion" type="submit"><span><i class="fa fa-window-close"></span></i>&nbsp;<a href="cerrarsesion.php">Cerrar Sesión</a></button>
+    <a href="cerrarsesion.php"><button class="btn btn-danger cerrar-sesion" type="submit"><span><i class="fa fa-window-close"></span></i>&nbsp;Cerrar Sesión</button></a>
     </ul>
     </div>
     

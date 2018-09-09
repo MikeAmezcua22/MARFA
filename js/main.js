@@ -127,21 +127,19 @@ function agregaform(datos){
   $('#RfcClienteU').val(d[1]);
   $('#RazonSocialU').val(d[2]);
   $('#EstadoClienteU').val(d[3]);
-  $('#DiasCreditoU').val(d[4]);
-  $('#SaldoClienteU').val(d[5]);
-  $('#TelefonoContactoU').val(d[6]);
-  $('#CalleClienteU').val(d[7]);
-  $('#NoClienteU').val(d[8]);
-  $('#ColoniaClienteU').val(d[9]);
-  $('#CodPostalClienteU').val(d[10]);
-  $('#CiudadClienteU').val(d[11]);
+  $('#SaldoClienteU').val(d[4]);
+  $('#TelefonoContactoU').val(d[5]);
+  $('#CalleClienteU').val(d[6]);
+  $('#NoClienteU').val(d[7]);
+  $('#ColoniaClienteU').val(d[8]);
+  $('#CodPostalClienteU').val(d[9]);
+  $('#CiudadClienteU').val(d[10]);
 }
 function actualizaDatos(){
   IdCliente=$('#idpersona').val();
   RfcCliente=$('#RfcClienteU').val();
   RazonSocial=$('#RazonSocialU').val();
   EstadoCliente=$('#EstadoClienteU').val();
-  DiasCredito=$('#DiasCreditoU').val();
   SaldoCliente=$('#SaldoClienteU').val();
   TelefonoContacto=$('#TelefonoContactoU').val();
   Calle=$('#CalleClienteU').val();
@@ -154,7 +152,6 @@ function actualizaDatos(){
           "&RfcCliente=" + RfcCliente +
           "&RazonSocial=" + RazonSocial +
           "&EstadoCliente=" + EstadoCliente +
-          "&DiasCredito=" + DiasCredito +
           "&SaldoCliente=" + SaldoCliente +
           "&TelefonoContacto=" + TelefonoContacto +
           "&Calle=" + Calle +
@@ -268,21 +265,19 @@ function agregaformproveedor(datos){
   $('#RfcProveedorUProveedor').val(d[1]);
   $('#RazonSocialUProveedor').val(d[2]);
   $('#EstadoProveedorUProveedor').val(d[3]);
-  $('#DiasCreditoUProveedor').val(d[4]);
-  $('#SaldoProveedorUProveedor').val(d[5]);
-  $('#TelefonoContactoUProveedor').val(d[6]);
-  $('#CalleProveedorUProveedor').val(d[7]);
-  $('#NoProveedorUProveedor').val(d[8]);
-  $('#ColoniaProveedorUProveedor').val(d[9]);
-  $('#CodPostalProveedorUProveedor').val(d[10]);
-  $('#CiudadProveedorUProveedor').val(d[11]);
+  $('#SaldoProveedorUProveedor').val(d[4]);
+  $('#TelefonoContactoUProveedor').val(d[5]);
+  $('#CalleProveedorUProveedor').val(d[6]);
+  $('#NoProveedorUProveedor').val(d[7]);
+  $('#ColoniaProveedorUProveedor').val(d[8]);
+  $('#CodPostalProveedorUProveedor').val(d[9]);
+  $('#CiudadProveedorUProveedor').val(d[10]);
 }
 function actualizaDatosProveedor(){
   IdProveedor=$('#idpersonaProveedor').val();
   RfcProveedor=$('#RfcProveedorUProveedor').val();
   RazonSocialProveedor=$('#RazonSocialUProveedor').val();
   EstadoProveedor=$('#EstadoProveedorUProveedor').val();
-  DiasCreditoProveedor=$('#DiasCreditoUProveedor').val();
   SaldoProveedor=$('#SaldoProveedorUProveedor').val();
   TelefonoContactoProveedor=$('#TelefonoContactoUProveedor').val();
   CalleProveedor=$('#CalleProveedorUProveedor').val();
@@ -295,7 +290,6 @@ function actualizaDatosProveedor(){
           "&RfcProveedorUProveedor=" + RfcProveedor +
           "&RazonSocialProveedor=" + RazonSocialProveedor +
           "&EstadoProveedor=" + EstadoProveedor +
-          "&DiasCreditoProveedor=" + DiasCreditoProveedor +
           "&SaldoProveedor=" + SaldoProveedor +
           "&TelefonoContactoProveedor=" + TelefonoContactoProveedor +
           "&CalleProveedor=" + CalleProveedor +

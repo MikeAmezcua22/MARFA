@@ -5,7 +5,6 @@
   $RfcC= $_POST['RfcProveedorUProveedor'];
   $RsC= $_POST['RazonSocialUProveedor'];
   $EdC= $_POST['EstadoProveedorUProveedor'];
-  $DsC= $_POST['DiasCreditoUProveedor'];
   $Sc= $_POST['SaldoProveedorUProveedor'];
   $TcC= $_POST['TelefonoContactoUProveedor'];
   $Ccl= $_POST['CalleProveedorUProveedor'];
@@ -30,7 +29,6 @@
  $query = "UPDATE proveedores set RfcProveedor = '$RfcC',
                                RazonSocial = '$RsC',
                                EstadoProveedor = $EdC,
-                               DiasCredito = $DsC,
                                SaldoProveedor = $Sc,
                                TelefonoContacto = '$TcC',
                                Calle = '$Ccl',

@@ -5,7 +5,6 @@
   $RfcC= $_POST['RfcClienteU'];
   $RsC= $_POST['RazonSocialU'];
   $EdC= $_POST['EstadoClienteU'];
-  $DsC= $_POST['DiasCreditoU'];
   $Sc= $_POST['SaldoClienteU'];
   $TcC= $_POST['TelefonoContactoU'];
   $Ccl= $_POST['CalleClienteU'];
@@ -30,7 +29,6 @@
  $query = "UPDATE clientes set RfcCliente = '$RfcC',
                                RazonSocial = '$RsC',
                                EstadoCliente = $EdC,
-                               DiasCredito = $DsC,
                                SaldoCliente = $Sc,
                                TelefonoContacto = '$TcC',
                                Calle = '$Ccl',
